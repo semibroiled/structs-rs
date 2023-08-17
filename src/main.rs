@@ -6,7 +6,7 @@ struct Rectangle {
 
 impl Rectangle {
     fn area(&self) -> u32 {
-        rectangle.width * rectangle.height
+        self.width * self.height
     }
 
     fn square(size: u32) -> Self {
@@ -17,7 +17,7 @@ impl Rectangle {
     }
 
     fn fit_in(&self, other: &Rectangle) -> bool {
-        self.width < other.width && self.height < other.height
+        self.width > other.width && self.height > other.height
     }
 }
 
