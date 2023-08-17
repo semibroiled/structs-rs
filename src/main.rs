@@ -5,7 +5,7 @@ struct Rectangle {
 }
 
 impl Rectangle {
-    fn area(rectangle: &Rectangle) -> u32 {
+    fn area(&self) -> u32 {
         rectangle.width * rectangle.height
     }
 
@@ -20,6 +20,7 @@ impl Rectangle {
         self.width < other.width && self.height < other.height
     }
 }
+
 fn main() {
     println!("Hello, world!");
 
@@ -30,7 +31,7 @@ fn main() {
 
     let rect2 = Rectangle::square(5);
 
-    println!(" The area is {} square meters", rect1.area(&)); //call with rect1 reference
+    println!(" The area is {} square meters", rect1.area()); //call with rect1 reference
     println!("{:#?}", rect1);
 
     println!("Rect 2 can fit in Rect 1 is {}", rect1.fit_in(&rect2));
